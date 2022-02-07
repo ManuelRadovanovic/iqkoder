@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h1>Kontinenti</h1>
+    <br/>
+    <table class="table table-striped table-info">
+        {% for continent in continents_list %}
+            <tr>
+                <td>
+                    {{ forloop.counter }}.        
+                </td>
+                <td>
+                    <a href="{% url 'show-continent' continent.id %}">{{ continent }}</a>
+                    <br/>
+                </td>
+                <td align="right">
+                    <a href="{% url 'update-continent' continent.id %}"
+                    class="btn btn-outline-success btn-sm">Ažuriraj</a>
+
+                    <a href="{% url 'delete-continent' continent.id %}"
+                    class="btn btn-outline-danger btn-sm">Obriši</a>
+                                    
+                </td>
+            </tr>
+
+        {% endfor %}
+        </table>
+        <br/>
+
+        <a href="{% url 'add-continent' %}"
+        class = "btn btn-primary btn-lg">Dodaj</a>
+        <a href="{% url 'contents' %}"
+        class = "btn btn-secondary btn-lg">Nazad</a>
+        <br/>
+
+{% endblock %}
+
+
+

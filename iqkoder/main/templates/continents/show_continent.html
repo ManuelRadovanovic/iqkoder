@@ -1,0 +1,36 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <div class="card text-white bg-primary mb-3" style="max-width: 18rem">
+        <div class="card-header"><strong>Kontinent</strong></div>
+        <div class="card-body">
+            <h5 class="card-title">{{ continent }}</h5>
+            
+            <p><img src="../media/continents/germany.jpg" width="32px">
+                &nbsp;
+                {{ continent.continent_de }}
+            </p>
+            <br/>
+
+            <p><img src="../media/continents/united_kingdom.jpg" width="32px">
+                &nbsp;
+                {{ continent.continent_en }}
+            </p>
+            <br/>
+
+            <p><img src="../media/continents/serbia.jpg" width="32px">
+                &nbsp;
+                {{ continent.continent_sr }}
+            </p>
+            <br/>
+
+        </div>
+    </div>
+ 
+    <br/>
+    <a href="{% url 'continents' %}"
+    class = "btn btn-secondary btn-lg">Nazad</a>
+    <br/>
+
+{% endblock %}
+

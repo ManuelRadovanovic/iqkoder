@@ -1,0 +1,30 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+    <h1>Dodajte Kontinent</h1>
+    <br/>
+
+    {% if submitted %}
+        Dodali ste kontinent uspešno!
+        <br/><br/>
+        <a href="{% url 'continents' %}"
+        class="btn btn-secondary btn-lg">Nazad</a>
+    {% else %}
+        <form action="" method=POST>
+            {% csrf_token %}
+            {{ form.as_p }}
+   
+        <br/>
+
+        <input type='submit' value='Dodaj'
+        class="btn btn-primary btn-lg"/>
+        <a href="{% url 'continents' %}"
+        class = "btn btn-secondary btn-lg">Nazad</a>
+        <br/>
+
+    {% endif %}
+{% endblock %}
+
+
+
